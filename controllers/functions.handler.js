@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const TelegramBot = require('node-telegram-bot-api');
-const UsedEmail = require('../models/UsedEmail');  // Importa el modelo correctamente
-const correosUsados = require('../models/correosUsados');  // Importa el modelo correctamente
+const UsedEmail = require('../models/UsedEmail');  
+const correosUsados = require('../models/correosUsados');  
 
 const token = "7157531054:AAFwZPXY7Rh4d-gVvkscWajM1P5-gMi2WiQ";
 const bot = new TelegramBot(token, { polling: true });
