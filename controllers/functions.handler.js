@@ -1,8 +1,7 @@
 const mongoose = require('mongoose');
 const TelegramBot = require('node-telegram-bot-api');
-const UsedEmail = require('../models/UsedEmail');  // Importa el modelo correctamente
-const correosUsados = require('../models/correosUsados');  // Importa el modelo correctamente
-const db = require('../db.js');
+const UsedEmail = require('../models/UsedEmail');  
+const correosUsados = require('../models/correosUsados');  
 
 const token = "7157531054:AAFwZPXY7Rh4d-gVvkscWajM1P5-gMi2WiQ";
 const bot = new TelegramBot(token, { polling: true });
@@ -11,7 +10,6 @@ const channel = { id: '-1002176905483', name: 'Club Bet Live Bots 💎' };
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const userStates = {};
-db();
 
 const handleEmailValidation = async (chatId, text) => {
   if (emailRegex.test(text)) {
@@ -84,7 +82,6 @@ const welcomeUser = () => {
   });
 };
 
-welcomeUser();
 
 const unbanChatMember = (userId) => {
   bot.unbanChatMember(channel.id, userId)
@@ -101,3 +98,10 @@ const kickChatMember = (userId) => {
     })
     .catch(err => console.log(`Error to kick user: ${err}`));
 };
+
+
+module.exports = {
+  welcomeUser,
+  unbanChatMember,
+  kickChatMember
+}
