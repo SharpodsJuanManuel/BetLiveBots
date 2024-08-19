@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const UsedEmailSchema = new mongoose.Schema({
   email: {
@@ -6,7 +6,12 @@ const UsedEmailSchema = new mongoose.Schema({
     required: true,
     unique: true,
   },
-  isActive : Boolean,
+  isActive: Boolean,
+  telegramId: {
+    type: String,
+    unique: false,
+    required: false,
+  },
 });
 
 const UsedEmail = mongoose.model('diamondUsers', UsedEmailSchema);
