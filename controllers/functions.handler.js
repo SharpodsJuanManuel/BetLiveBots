@@ -8,7 +8,7 @@ const { updateTelegramId } = require("./updateTelegramId");
 const token = "7157531054:AAFwZPXY7Rh4d-gVvkscWajM1P5-gMi2WiQ";
 const bot = new TelegramBot(token, { polling: true });
 
-const channel = { id: '-1002223953995', name: 'Bots Bet live 💎' };
+const channel = { id: '-1002176905483', name: 'Bots Bet live 💎' };
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const userStates = {};
