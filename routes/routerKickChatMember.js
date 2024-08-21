@@ -6,8 +6,10 @@ const usedEmail = require('../models/UsedEmail')
 router.post("/", async (req, res) => {
     const { telegram_id, email } = req.body;
     console.log(telegram_id, email)
+    const emailmin = email.toLowerCase();
+    console.log(emailmin)
     try{
-        const propertyChange = await usedEmail.findOneAndUpdate({ email }, { isActive: false });
+        const propertyChange = await usedEmail.findOneAndUpdate({ email : emailmin }, { isActive: false });
         console.log(propertyChange);
         if (propertyChange) {
             console.log("Se ha actualizado la propiedad isActive");
