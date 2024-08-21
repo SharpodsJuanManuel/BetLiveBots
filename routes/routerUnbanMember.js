@@ -5,9 +5,9 @@ const usedEmail = require('../models/UsedEmail')
 
 router.post("/", async (req, res) => {
     const { telegram_id, email } = req.body;
-    console.log(telegram_id, email)
+    const emailmin = email.toLowerCase();
     try{
-        const propertyChange = await usedEmail.findOneAndUpdate({ email }, { isActive: true });
+        const propertyChange = await usedEmail.findOneAndUpdate({ email : emailmin }, { isActive: true });
         console.log('desde unbanChatMember.js');
         if (propertyChange) {
             console.log("Se ha actualizado la propiedad isActive");
