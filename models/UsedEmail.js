@@ -14,6 +14,6 @@ const UsedEmailSchema = new mongoose.Schema({
   },
 });
 
-const UsedEmail = mongoose.model('usersdiamonds', UsedEmailSchema);
+const UsedEmail = mongoose.model('usersDiamond', UsedEmailSchema);
 
 module.exports = UsedEmail;
