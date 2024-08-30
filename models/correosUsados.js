@@ -13,6 +13,6 @@ const UsedEmailSchema = new mongoose.Schema({
   },
 });
 
-const correosUsados = mongoose.model('betLiveUsersEmailUsed', UsedEmailSchema);
+const correosUsados = mongoose.model('diamondentereds', UsedEmailSchema);
 
 module.exports = correosUsados;
