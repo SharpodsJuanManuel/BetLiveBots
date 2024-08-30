@@ -13,6 +13,6 @@ const UsedEmailSchema = new mongoose.Schema({
   },
 });
 
-const correosUsados = mongoose.model('diamondentereds', UsedEmailSchema);
+const correosUsados = mongoose.model('diamondEntered', UsedEmailSchema);
 
 module.exports = correosUsados;
